@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="css\StyleSheet.css" />
     <Content Include="GameBody\GuessNumberForm.aspx" />
+    <Content Include="GameBody\WinnerWinner.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="GameBody\MaxRangeForm.aspx" />
     <Content Include="Web.config" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="GameBody\GuessNumberForm.aspx.designer.cs">
       <DependentUpon>GuessNumberForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GameBody\WinnerWinner.aspx.cs">
+      <DependentUpon>WinnerWinner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GameBody\WinnerWinner.aspx.designer.cs">
+      <DependentUpon>WinnerWinner.aspx</DependentUpon>
     </Compile>
     <Compile Include="GameManager.cs" />
     <Compile Include="HomePage.aspx.cs">
