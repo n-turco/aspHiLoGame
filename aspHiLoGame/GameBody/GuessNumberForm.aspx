@@ -15,6 +15,8 @@
       <div id="formContainer">
           <asp:Label ID="rangeLabel" runat="server" Font="Bold" />
           <br />
+          <asp:Label ID="outOfBoundsLabel" runat="server" ForeColor="red"/>
+          <br />
           <asp:Label ID="guessLabel" runat="server">Enter your guess: </asp:Label>
           <asp:TextBox ID="guessTextBox" runat="server"></asp:TextBox>
           <asp:Button ID="submitGuess" runat="server" Text="Submit" OnClick="SubmitGuess_Click" BorderStyle="Groove" />

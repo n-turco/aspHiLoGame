@@ -26,23 +26,25 @@ namespace aspHiLoGame.GameBody
         {
             int secretNumber = GameManager.Player.RandomNumber;
             int.TryParse(guessTextBox.Text, out int guessNumber);
-
+            
             if (guessNumber == secretNumber) 
             {
                 Server.Transfer("WinnerWinner.aspx");
             }
-            if (guessNumber > secretNumber) 
+            else if (guessNumber < GameManager.Player.MinRange || guessNumber > GameManager.Player.MaxRange)
+            {
+                outOfBoundsLabel.Text = "Number " + guessNumber.ToString() + " is out of bounds.";
+            }
+            else if (guessNumber > secretNumber) 
             {
                 GameManager.Player.MaxRange = guessNumber - 1;
             }
-            if (guessNumber < secretNumber) 
+            else if (guessNumber < secretNumber) 
             {
                 GameManager.Player.MinRange = guessNumber + 1;
             }
             rangeLabel.Text = $"Now guess between {GameManager.Player.MinRange} and {GameManager.Player.MaxRange}";
             guessTextBox.Text = string.Empty;
-            GameManager.Player.MinRange = 1;
-            GameManager.Player.MaxRange = 0;
         }
     }
 }
