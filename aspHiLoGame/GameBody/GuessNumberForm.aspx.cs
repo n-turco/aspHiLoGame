@@ -41,6 +41,8 @@ namespace aspHiLoGame.GameBody
             }
             rangeLabel.Text = $"Now guess between {GameManager.Player.MinRange} and {GameManager.Player.MaxRange}";
             guessTextBox.Text = string.Empty;
+            GameManager.Player.MinRange = 1;
+            GameManager.Player.MaxRange = 0;
         }
     }
 }
