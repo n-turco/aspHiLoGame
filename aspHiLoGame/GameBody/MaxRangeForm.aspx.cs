@@ -17,14 +17,20 @@ namespace aspHiLoGame.SetMaxRange
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-         
+            //checks if this is the first time on this page and displays greeting with name.
             if(PreviousPage != null)
             {
                 maxRangeLabel.Text = "Hello " + GameManager.Player.Name + ", choose a max Number.";
             }
         }
 
+        //NAME: SubmitMaxRange_Click
+        //DESCRIPTION: - parses the user input(maxRange) into an int
+        //             - saves it the GameManager to be used later
+        //             - calls the generate random number method from GameManager
+        //             - uses the entered maxRange to generate a random number
+        //             - Transfers to the next phase of the game
+        //RETURNS: Does not return anything.
         protected void SubmitMaxRange_Click(object sender, EventArgs e)
         {
             //convert string to int and save it to the player object in GameManager

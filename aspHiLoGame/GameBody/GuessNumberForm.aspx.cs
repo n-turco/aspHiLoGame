@@ -12,16 +12,26 @@ namespace aspHiLoGame.GameBody
         protected void Page_Init(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-
         }
-        protected void Page_Load(object sender, EventArgs e)
+
+        protected void Page_Load(object sender, EventArgs e)   
         {
+            //checks if its the first time coming to this page and displays greeting message
             if (!IsPostBack)
             {
                 rangeLabel.Text = $"Hey {GameManager.Player.Name}, Guess between {GameManager.Player.MinRange} and {GameManager.Player.MaxRange}";
             }
         }
 
+        //NAME: SubmitGuess_Click
+        //DESCRIPTION: - stores the random number in an int
+        //             - parses the user input(guess) into an int
+        //             - compares if the guess number is the same as the random number, if so transfer to winner page
+        //             - checks if the guess was out of bounds based on min and max range
+        //             - checks if guess number is greater than random number and decrements the max range to guess - 1.
+        //             - checks if guess number is less than random number and increments the min range to guess + 1.
+        //             - displays an updated message after each guess showing the new range and clears the guessbox.
+        //RETURNS: Does not return anything.
         protected void SubmitGuess_Click(object sender, EventArgs e)
         {
             int secretNumber = GameManager.Player.RandomNumber;

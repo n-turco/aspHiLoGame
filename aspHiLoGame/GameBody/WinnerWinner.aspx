@@ -6,9 +6,9 @@
 <head runat="server">
     <title>HILOASPNET - Winner Winner</title>
     <link rel="stylesheet" href="../css/StyleSheet.css" />
-
 </head>
 <body>
+    <!--Winner page design-->
     <div id="backGround">
         <h1>A-03 | Hi Lo Winner!</h1>
         <form id="winnerForm" runat="server">

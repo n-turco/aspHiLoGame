@@ -11,11 +11,10 @@ namespace aspHiLoGame
         public int MaxRange { get; set; }
         public int MinRange { get; set; }
         public int Guess { get; set; }
-
         public int RandomNumber { get; set; }
 
         public GameManager() { }
-        //static player to maintain values during game
+        //player to maintain values during game
         static public GameManager Player = new GameManager
         {
             Name = "",
@@ -27,10 +26,16 @@ namespace aspHiLoGame
         };
         readonly Random randnumber = new Random();
 
+        //NAME: GenerateRandomNumber
+        //DESCRIPTION: - sets the minRange to 1
+        //             - generates a random number based on the min and max Range
+        //PARAMETERS: int maxRange - user entered input
+        //RETURNS: int - random number.
         public int GenerateRandomNumber(int maxRange)
         {
             int minRange = 1;
-            return randnumber.Next(minRange, maxRange + 1);
+            Player.MinRange = minRange;
+            return randnumber.Next(Player.MinRange, maxRange + 1);
         }
     }
 }

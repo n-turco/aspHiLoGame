@@ -17,6 +17,7 @@
             <asp:TextBox ID="maxRangeTextBox" runat="server"></asp:TextBox>
             <asp:Button ID="submitMaxRange" runat="server" Text="Submit" OnClick="SubmitMaxRange_Click" BorderStyle="Groove" />
             <br />
+             <!--Validates that the user entered something-->
             <asp:RequiredFieldValidator ID="validateRange"
                 runat="server"
                 ControlToValidate="maxRangeTextBox"

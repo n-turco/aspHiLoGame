@@ -21,6 +21,7 @@
           <asp:TextBox ID="guessTextBox" runat="server"></asp:TextBox>
           <asp:Button ID="submitGuess" runat="server" Text="Submit" OnClick="SubmitGuess_Click" BorderStyle="Groove" />
           <br />
+          <!--Validates that the user entered something-->
           <asp:RequiredFieldValidator ID="validateRange"
               runat="server"
               ControlToValidate="guessTextBox"
